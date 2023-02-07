@@ -1,0 +1,34 @@
+{
+  "name": "demo-husky",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "prettier": "prettier --write --no-semi --single-quote \"src/**/*.+(js|json)\"",
+    "lint-fix": "eslint --fix --ext .js,.jsx src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anson-ng-appier/demo-husky.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anson-ng-appier/demo-husky/issues"
+  },
+  "homepage": "https://github.com/anson-ng-appier/demo-husky#readme",
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "husky": "^8.0.3"
+  },
+  "lint-staged": {
+    "src/**/*.{js}": [
+      "npm run prettier",
+      "npm run lint-fix",
+      "git add"
+    ]
+  }
+
+}
